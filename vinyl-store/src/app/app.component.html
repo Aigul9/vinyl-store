@@ -1,0 +1,33 @@
+<dx-nav-bar height="60px" (onItemClick)="selectionChanged($event)">
+    <dxi-item text="R U N E S" icon="assets/vinyl3.png"></dxi-item>
+    <dxi-item text="CATALOG"></dxi-item>
+    <dxi-item text="ORDERS"></dxi-item>
+    <dxi-item disabled="true"></dxi-item>
+    <dxi-item disabled="true"></dxi-item>
+    <dxi-item icon="cart"></dxi-item>
+    <dxi-item text="{{username}}" icon="hidepanel"></dxi-item>
+</dx-nav-bar>
+<dx-popup
+  [width]="300"
+  [height]="150"
+  [showTitle]="true"
+  title="Sign in"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [(visible)]="popupVisible">
+  <dx-button class="btnApply" text="Login" type="default" stylingMode="contained" (onClick)="onLoginClicked()"></dx-button>
+  <dx-button class="btnApply" text="Register" type="default" stylingMode="contained" (onClick)="onRegisterClicked()" style="float: right;"></dx-button>
+</dx-popup>
+<dx-popup
+  [width]="300"
+  [height]="170"
+  [showTitle]="true"
+  title="Sign out"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [(visible)]="popupVisibleOut">
+  <p>Do you want to sign out?</p>
+  <dx-button class="btnApply" text="Yes" type="default" stylingMode="contained" (onClick)="LogOutYes()"></dx-button>
+  <dx-button class="btnApply" text="No" type="default" stylingMode="contained" (onClick)="LogOutNo()" style="float: right;"></dx-button>
+</dx-popup>
+<router-outlet></router-outlet>
